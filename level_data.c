@@ -9,20 +9,37 @@ enum{COIN_REG, COIN_END};
 
 //y, room, x, type
 //y = TURN_OFF end of list
+// y, room, x, type
+// y = TURN_OFF end of list
 const unsigned char level_1_coins[]={
+	// Room 0: On the first large platform to ease the player in.
 	0x90, 0, 0x70, COIN_REG, 
 	0x90, 0, 0x90, COIN_REG, 
-	0x50, 1, 0x40, COIN_REG,  
-	0x70, 2, 0x00, COIN_REG, 
-	0x50, 2, 0x70, COIN_REG, 
-	0x50, 3, 0xa0, COIN_REG, 
-	0x50, 3, 0xd0, COIN_REG, 
-	0x60, 4, 0xf0, COIN_REG, 
-	0x60, 5, 0x20, COIN_REG,  
-	0x30, 6, 0xc0, COIN_REG, 
-	0x30, 6, 0xe0, COIN_REG, 
-	0x30, 7, 0x80, COIN_REG, 
-	0xb0, 7, 0xc0, COIN_END, 	
+
+	// Room 1: Lowered to be accessible on the platform.
+	0x90, 1, 0x40, COIN_REG,  
+
+	// Room 2: Placed on each of the three small platforms to guide the jumps.
+	0x80, 2, 0x20, COIN_REG, 
+	0x80, 2, 0x70, COIN_REG, 
+	0x80, 2, 0xc0, COIN_REG, 
+
+	// Room 3: On the large block on the right-hand side.
+	0x70, 3, 0xa0, COIN_REG, 
+	0x70, 3, 0xd0, COIN_REG, 
+
+	// Room 4: On top of the block at the end of the room.
+	0x80, 4, 0xf0, COIN_REG, 
+
+	// Room 5: On the high platform at the start of the room.
+	0x80, 5, 0x20, COIN_REG,  
+
+	// Room 6: On the highest of the ascending platforms.
+	0x60, 6, 0x90, COIN_REG, 
+
+	// Room 7: The final coin, placed on the ground after the last pillar.
+	0xc8, 7, 0xc0, COIN_END, 	
+
 	TURN_OFF
 };
 

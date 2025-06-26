@@ -144,37 +144,41 @@ const unsigned char shuffle_array[]={
 
 
 const unsigned char palette_title[]={
-//0x0f, 0x00, 0x10, 0x30,
-0x0f,0x04,0x15,0x32,
-0, 0, 0, 0,
+// A deep space background, with a glowing, slightly softer title text
+0x0F,0x01,0x11,0x28, // Black, Deep Blue, Dark Purple, Soft Gold/Orange (for glowing title)
+0, 0, 0, 0,          // Keep unused palettes black
 0, 0, 0, 0,
 0, 0, 0, 0
 }; 
 
 
 const unsigned char title_color_rotate[]={
-	0x32,0x22,0x30,0x37
+    0x28,0x18,0x08,0x01 // Rotate between Soft Gold, Light Orange, Dark Orange, Deep Blue
 };
 
 
 const unsigned char palette_bg[]={
-0x22,0x16,0x26,0x06,
-0x22,0x17,0x19,0x29,
-0x22,0x17,0x07,0x10,
-0x22,0x08,0x19,0x29 
-};
-
-
-
-
+// Palette 0: Deep space/night sky with more subtle dark variations
+0x0F,0x01,0x11,0x0C, // Black (space), Deep Blue, Dark Purple, Dark Cyan/Teal (for subtle nebula)
+// Palette 1: Asteroids/metallic structures - softer greys, hint of blue
+0x0F,0x00,0x10,0x20, // Black, Dark Grey, Mid Grey, Light Grey (for rocks/metal) - *unchanged, as this looked good*
+// Palette 2: Alien ground/glowing elements - softened brights
+0x0F,0x03,0x13,0x23, // Black, Dark Green/Cyan, Mid Green/Cyan, Softer Green/Cyan (alien ground/energy)
+// Palette 3: More distinct space objects/starry sky - brighter blues, some sparkle
+0x0F,0x01,0x12,0x22 // Black, Deep Blue, Medium Blue, Bright Blue (for stars, distant gas, more vibrant)
+}; 
 
 
 const unsigned char palette_sp[]={
-0x22, 0x01, 0x11, 0x10,
-0x22, 0x17, 0x28, 0x38,
-0x22, 0x0c, 0x2c, 0x30,
-0x22, 0x03, 0x13, 0x33,
-}; 
+// Sprite Palette 0: Player Character (your blue guy)
+0x0F, 0x01, 0x11, 0x30, // Transparent, Deep Blue, Dark Gray, Bright Yellow (suit accents/glow)
+// Sprite Palette 1: Coins/Collectibles - still good, glowing gold
+0x0F, 0x07, 0x17, 0x27, // Transparent, Dark Gold, Mid Gold, Bright Gold (metallic coins)
+// Sprite Palette 2: Enemies / General Light Elements - Muted light blue/cyan for visibility
+0x0F, 0x0B, 0x1B, 0x2B, // Transparent (0x0F), Dark Gray (0x0B), Mid Blue-Gray (0x1B), Light Blue/Cyan (0x2B)
+// Sprite Palette 3: Projectiles/Effects - still good
+0x0F, 0x0C, 0x1C, 0x2C, // Transparent, Dark Cyan, Mid Cyan, Bright Cyan
+};
 
 
 

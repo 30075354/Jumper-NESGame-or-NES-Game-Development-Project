@@ -185,13 +185,17 @@ const unsigned char palette_sp[]={
 
 
 
+const unsigned char TITLE_TEXT1[]="Void Jumper";
+const unsigned char TITLE_TEXT2[]="Press Start";
+const unsigned char TITLE_TEXT3[]="A Game By William";
 
-
-const unsigned char END_TEXT[]="The end of the game.";
-const unsigned char END_TEXT2[]="I guess you won?";
+const unsigned char END_TEXT[]="end of the game.";
+const unsigned char END_TEXT2[]="you won!";
 const unsigned char END_TEXT3[]="Coins: ";
 
-const unsigned char DEAD_TEXT[]="You died.";
+const unsigned char DEAD_TEXT[]="death";
+
+
 
 #include "NES_ST/title.h"
 

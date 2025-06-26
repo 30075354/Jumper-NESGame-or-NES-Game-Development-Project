@@ -28,7 +28,6 @@
 	.import		_bank_spr
 	.import		_vram_adr
 	.import		_vram_fill
-	.import		_vram_unrle
 	.import		_memcpy
 	.import		_delay
 	.import		_set_vram_buffer
@@ -129,6 +128,9 @@
 	.export		_title_color_rotate
 	.export		_palette_bg
 	.export		_palette_sp
+	.export		_TITLE_TEXT1
+	.export		_TITLE_TEXT2
+	.export		_TITLE_TEXT3
 	.export		_END_TEXT
 	.export		_END_TEXT2
 	.export		_END_TEXT3
@@ -465,164 +467,72 @@ _palette_sp:
 	.byte	$0C
 	.byte	$1C
 	.byte	$2C
+_TITLE_TEXT1:
+	.byte	$56,$6F,$69,$64,$20,$4A,$75,$6D,$70,$65,$72,$00
+_TITLE_TEXT2:
+	.byte	$50,$72,$65,$73,$73,$20,$53,$74,$61,$72,$74,$00
+_TITLE_TEXT3:
+	.byte	$41,$20,$47,$61,$6D,$65,$20,$42,$79,$20,$57,$69,$6C,$6C,$69,$61
+	.byte	$6D,$00
 _END_TEXT:
-	.byte	$54,$68,$65,$20,$65,$6E,$64,$20,$6F,$66,$20,$74,$68,$65,$20,$67
-	.byte	$61,$6D,$65,$2E,$00
-_END_TEXT2:
-	.byte	$49,$20,$67,$75,$65,$73,$73,$20,$79,$6F,$75,$20,$77,$6F,$6E,$3F
+	.byte	$65,$6E,$64,$20,$6F,$66,$20,$74,$68,$65,$20,$67,$61,$6D,$65,$2E
 	.byte	$00
+_END_TEXT2:
+	.byte	$79,$6F,$75,$20,$77,$6F,$6E,$21,$00
 _END_TEXT3:
 	.byte	$43,$6F,$69,$6E,$73,$3A,$20,$00
 _DEAD_TEXT:
-	.byte	$59,$6F,$75,$20,$64,$69,$65,$64,$2E,$00
+	.byte	$64,$65,$61,$74,$68,$00
 _title:
-	.byte	$01
-	.byte	$00
-	.byte	$01
-	.byte	$FE
-	.byte	$00
-	.byte	$01
-	.byte	$0B
-	.byte	$80
-	.byte	$81
-	.byte	$82
-	.byte	$83
-	.byte	$84
-	.byte	$85
-	.byte	$86
-	.byte	$87
-	.byte	$88
-	.byte	$89
-	.byte	$8A
-	.byte	$00
-	.byte	$01
-	.byte	$14
-	.byte	$90
-	.byte	$91
-	.byte	$92
-	.byte	$93
-	.byte	$94
-	.byte	$95
-	.byte	$96
-	.byte	$97
-	.byte	$98
-	.byte	$99
-	.byte	$9A
-	.byte	$00
-	.byte	$01
-	.byte	$14
-	.byte	$A0
-	.byte	$A1
-	.byte	$A2
-	.byte	$A3
-	.byte	$A4
-	.byte	$A5
-	.byte	$A6
-	.byte	$A7
-	.byte	$A8
-	.byte	$A9
-	.byte	$AA
-	.byte	$00
-	.byte	$01
-	.byte	$32
-	.byte	$B0
-	.byte	$B1
-	.byte	$B2
-	.byte	$B3
-	.byte	$B4
-	.byte	$B5
-	.byte	$B6
-	.byte	$B7
-	.byte	$B8
-	.byte	$B9
-	.byte	$BA
-	.byte	$BB
-	.byte	$BC
-	.byte	$BD
-	.byte	$BE
-	.byte	$00
-	.byte	$01
-	.byte	$10
-	.byte	$C0
-	.byte	$C1
-	.byte	$C2
-	.byte	$C3
-	.byte	$C4
-	.byte	$C5
-	.byte	$C6
-	.byte	$C7
-	.byte	$C8
-	.byte	$C9
-	.byte	$CA
-	.byte	$CB
-	.byte	$CC
-	.byte	$CD
-	.byte	$CE
-	.byte	$00
-	.byte	$01
-	.byte	$10
-	.byte	$D0
-	.byte	$D1
-	.byte	$D2
-	.byte	$D3
-	.byte	$D4
-	.byte	$D5
-	.byte	$D6
-	.byte	$D7
-	.byte	$D8
-	.byte	$D9
-	.byte	$DA
-	.byte	$DB
-	.byte	$DC
-	.byte	$DD
-	.byte	$DE
-	.byte	$00
-	.byte	$01
-	.byte	$10
-	.byte	$E0
-	.byte	$E1
-	.byte	$E2
-	.byte	$E3
-	.byte	$E4
-	.byte	$E5
-	.byte	$E6
-	.byte	$E7
-	.byte	$E8
-	.byte	$E9
-	.byte	$EA
-	.byte	$EB
-	.byte	$EC
-	.byte	$ED
-	.byte	$EE
-	.byte	$00
-	.byte	$01
 	.byte	$AF
-	.byte	$32
-	.byte	$30
-	.byte	$32
-	.byte	$33
 	.byte	$00
-	.byte	$00
+	.byte	$0B
+	.byte	$56
+	.byte	$4F
+	.byte	$49
 	.byte	$44
-	.byte	$6F
-	.byte	$75
-	.byte	$67
+	.byte	$20
+	.byte	$4A
+	.byte	$55
+	.byte	$4D
+	.byte	$50
+	.byte	$45
+	.byte	$52
+	.byte	$EA
 	.byte	$00
-	.byte	$46
-	.byte	$72
-	.byte	$61
-	.byte	$6B
-	.byte	$65
-	.byte	$72
+	.byte	$0B
+	.byte	$50
+	.byte	$52
+	.byte	$45
+	.byte	$53
+	.byte	$53
+	.byte	$20
+	.byte	$53
+	.byte	$54
+	.byte	$41
+	.byte	$52
+	.byte	$54
+	.byte	$F6
 	.byte	$00
-	.byte	$01
-	.byte	$FE
-	.byte	$00
-	.byte	$01
-	.byte	$46
-	.byte	$00
-	.byte	$01
-	.byte	$00
+	.byte	$11
+	.byte	$41
+	.byte	$20
+	.byte	$47
+	.byte	$41
+	.byte	$4D
+	.byte	$45
+	.byte	$20
+	.byte	$42
+	.byte	$59
+	.byte	$20
+	.byte	$57
+	.byte	$49
+	.byte	$4C
+	.byte	$4C
+	.byte	$49
+	.byte	$41
+	.byte	$4D
+	.byte	$FF
 _level_1_coins:
 	.byte	$90
 	.byte	$00
@@ -6982,11 +6892,60 @@ _enemy_anim:
 	lda     #$00
 	jsr     _vram_adr
 ;
-; vram_unrle(title);
+; vram_fill(0, 1024);
 ;
-	lda     #<(_title)
-	ldx     #>(_title)
-	jsr     _vram_unrle
+	lda     #$00
+	jsr     pusha
+	ldx     #$04
+	jsr     _vram_fill
+;
+; multi_vram_buffer_horz(TITLE_TEXT1, sizeof(TITLE_TEXT1)-1, NTADR_A(10,12));
+;
+	jsr     decsp3
+	lda     #<(_TITLE_TEXT1)
+	ldy     #$01
+	sta     (sp),y
+	iny
+	lda     #>(_TITLE_TEXT1)
+	sta     (sp),y
+	lda     #$0B
+	ldy     #$00
+	sta     (sp),y
+	ldx     #$21
+	lda     #$8A
+	jsr     _multi_vram_buffer_horz
+;
+; multi_vram_buffer_horz(TITLE_TEXT2, sizeof(TITLE_TEXT2)-1, NTADR_A(10,18));
+;
+	jsr     decsp3
+	lda     #<(_TITLE_TEXT2)
+	ldy     #$01
+	sta     (sp),y
+	iny
+	lda     #>(_TITLE_TEXT2)
+	sta     (sp),y
+	lda     #$0B
+	ldy     #$00
+	sta     (sp),y
+	ldx     #$22
+	lda     #$4A
+	jsr     _multi_vram_buffer_horz
+;
+; multi_vram_buffer_horz(TITLE_TEXT3, sizeof(TITLE_TEXT3)-1, NTADR_A(8,24));
+;
+	jsr     decsp3
+	lda     #<(_TITLE_TEXT3)
+	ldy     #$01
+	sta     (sp),y
+	iny
+	lda     #>(_TITLE_TEXT3)
+	sta     (sp),y
+	lda     #$11
+	ldy     #$00
+	sta     (sp),y
+	ldx     #$23
+	lda     #$08
+	jsr     _multi_vram_buffer_horz
 ;
 ; game_mode = MODE_TITLE;
 ;
@@ -11168,7 +11127,7 @@ L001D:	jsr     _ppu_wait_nmi
 	iny
 	lda     #>(_END_TEXT)
 	sta     (sp),y
-	lda     #$15
+	lda     #$11
 	ldy     #$00
 	sta     (sp),y
 	ldx     #$21
@@ -11184,7 +11143,7 @@ L001D:	jsr     _ppu_wait_nmi
 	iny
 	lda     #>(_END_TEXT2)
 	sta     (sp),y
-	lda     #$11
+	lda     #$09
 	ldy     #$00
 	sta     (sp),y
 	ldx     #$21
@@ -11285,7 +11244,7 @@ L0022:	jsr     _ppu_wait_nmi
 	iny
 	lda     #>(_DEAD_TEXT)
 	sta     (sp),y
-	lda     #$0A
+	lda     #$06
 	ldy     #$00
 	sta     (sp),y
 	ldx     #$21

@@ -244,8 +244,16 @@ void main (void) {
 void load_title(void){
 	pal_bg(palette_title);
 	pal_spr(palette_sp);
+	
+	// Clear the screen to black
 	vram_adr(NAMETABLE_A);
-	vram_unrle(title);
+	vram_fill(0, 1024);
+	
+	// Use the simple, reliable text drawing function
+	multi_vram_buffer_horz(TITLE_TEXT1, sizeof(TITLE_TEXT1)-1, NTADR_A(10,12));
+	multi_vram_buffer_horz(TITLE_TEXT2, sizeof(TITLE_TEXT2)-1, NTADR_A(10,18));
+	multi_vram_buffer_horz(TITLE_TEXT3, sizeof(TITLE_TEXT3)-1, NTADR_A(8,24));
+	
 	game_mode = MODE_TITLE;
 }
 
